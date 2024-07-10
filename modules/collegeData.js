@@ -22,7 +22,7 @@ module.exports.initialize = function () {
                 }
 
                 dataCollection = new Data(JSON.parse(studentData), JSON.parse(courseData));
-                resolve();
+                resolve(dataCollection.students.length);
             });
         });
     });

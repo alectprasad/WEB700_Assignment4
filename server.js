@@ -100,7 +100,8 @@ app.all('*',(req, res) => {
 });
 // setup http server to listen on HTTP_PORT
 collegeData.initialize()
-.then (() => {
+.then ((students) => {
+    console.log(`${students} loaded`)
     app.listen(HTTP_PORT, ()=>{console.log("server listening on port: " + HTTP_PORT)});
 }).catch((err) => {
     console.log("Failed to fetch data from disk")
