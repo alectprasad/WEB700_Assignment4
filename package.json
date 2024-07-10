@@ -1,5 +1,5 @@
 {
-  "name": "web700_assignment3",
+  "name": "web700_assignment4",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alectprasad/WEB700_Assignment3.git"
+    "url": "git+https://github.com/alectprasad/WEB700_Assignment4.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/alectprasad/WEB700_Assignment3/issues"
+    "url": "https://github.com/alectprasad/WEB700_Assignment4/issues"
   },
-  "homepage": "https://github.com/alectprasad/WEB700_Assignment3#readme",
+  "homepage": "https://github.com/alectprasad/WEB700_Assignment4#readme",
   "description": "",
   "dependencies": {
     "express": "^4.19.2"
