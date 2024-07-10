@@ -14,7 +14,7 @@ var app = express();
 const collegeData = require('./modules/collegeData');
 const path = require('path');
 
-app.use(express.static('public'))
+app.use(express.static(path.join(__dirname, 'public')));
 
 // setup a 'route' to listen on the default url path
 app.get("/", (req, res) => {
@@ -27,6 +27,10 @@ app.get("/about", (req, res) => {
 
 app.get("/htmlDemo", (req, res) => {
     res.status(200).sendFile(path.join(__dirname, 'views', 'htmlDemo.html'));
+});
+
+app.get("/addStudent", (req, res) => {
+    res.status(200).sendFile(path.join(__dirname, 'views', 'addStudent.html'));
 });
 
 app.get("/students", (req, res) => {

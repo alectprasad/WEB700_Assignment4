@@ -1,0 +1,39 @@
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.form-section {
+    margin-bottom: 20px;
+}
+.form-row {
+    display: flex;
+    margin-right: 10px;
+}
+.form-column {
+    flex: 1;
+    margin-right: 10px;
+}
+.form-column:last-child {
+    margin-right: 0px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+input[type="text"], input[type="email"], select {
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+.checkpoint-label {
+    display: inline-block;
+    margin-right: 10px;
+}
+.submit-button {
+    background-color: #007bff;
+    color:white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
