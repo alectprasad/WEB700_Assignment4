@@ -106,3 +106,4 @@ collegeData.initialize()
     console.log("Failed to fetch data from disk")
 })
 
+module.exports = app;
