@@ -14,6 +14,8 @@ var app = express();
 const collegeData = require('./modules/collegeData');
 const path = require('path');
 
+app.use(express.static('public'))
+
 // setup a 'route' to listen on the default url path
 app.get("/", (req, res) => {
     res.status(200).sendFile(path.join(__dirname, 'views', 'home.html'));
