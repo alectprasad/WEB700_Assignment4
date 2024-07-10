@@ -34,37 +34,37 @@
 				<main class="col-md-12">
 				    <!-- Start your code here -->
                     <div class="form-container">
-					<form action="#" method="post">
+					<form action="/students/add" method="post">
                         <div class="form-section">
 					        <h2>Personal Information</h2>
                             <div class="form-row">
                                 <div class="form-column">
                                     <label for="firstname">First Name</label>
-                                    <input type="text" id="firstname" required>
+                                    <input type="text" id="firstname" name="firstname" required>
                                 </div>
                                 <div class="form-column">
                                     <label for="lastname">Last Name</label>
-                                    <input type="text" id="lastname" required>
+                                    <input type="text" id="lastname" name="lastname" required>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-column">
                                     <label for="email">Email</label>
-                                    <input type="email" id="email" required>
+                                    <input type="email" id="email" name="email" required>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-column">
                                     <label for="addressStreet">Address (Street)</label>
-                                    <input type="text" id="addressStreet" required>
+                                    <input type="text" id="addressStreet" name="addressStreet" required>
                                 </div>
                                 <div class="form-column">
                                     <label for="addressCity">Address (City)</label>
-                                    <input type="text" id="addressCity" required>
+                                    <input type="text" id="addressCity" name="addressCity" required>
                                 </div>
                                 <div class="form-column">
                                     <label for="addressProvince">Address (Province)</label>
-                                    <input type="text" id="addressProvince" required>
+                                    <input type="text" id="addressProvince" name="addressProvince" required>
                                 </div>
                             </div>
                         </div>
@@ -74,18 +74,18 @@
                                 <div class="form-column">
                                     <label for="TA">College Employment</label>
                                     <label class="checkbox-label">
-                                        <input type="checkbox" id="teachingAssistant" name="TA" value="teachingAssistant" required>
+                                        <input type="checkbox" id="teachingAssistant" name="TA" value="teachingAssistant">
                                         Teaching Assistant
                                     </label>
                                 </div>
                                 <div class="form-column">
                                     <label for="status">Enrollment Status</label>
                                     <label class="checkbox-label">
-                                        <input type="radio" id="fullTime" name="status" value="fullTime" required>
+                                        <input type="radio" id="fullTime" name="status" value="Full Time" required>
                                         Full Time
                                     </label>
                                     <label class="checkbox-label">
-                                        <input type="radio" id="partTime" name="status" value="partTime" required>
+                                        <input type="radio" id="partTime" name="status" value="Part Time" required>
                                         Part Time
                                     </label>
                                 </div>

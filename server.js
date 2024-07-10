@@ -15,6 +15,7 @@ const collegeData = require('./modules/collegeData');
 const path = require('path');
 
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.urlencoded({ extended: true }));
 
 // setup a 'route' to listen on the default url path
 app.get("/", (req, res) => {
@@ -32,6 +33,16 @@ app.get("/htmlDemo", (req, res) => {
 app.get("/addStudent", (req, res) => {
     res.status(200).sendFile(path.join(__dirname, 'views', 'addStudent.html'));
 });
+
+app.post("/students/add", (req, res) => {
+    collegeData.addStudent(req.body)
+    .then(() => {
+        res.redirect("/students");
+    })
+    .catch((error) => {
+        res.status(400).send(`<script>alert('Something Went Wrong'); window.location.href = '/addStudent';</script>`);
+    })
+})
 
 app.get("/students", (req, res) => {
     if (req.query && req.query.course) {

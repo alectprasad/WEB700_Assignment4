@@ -102,4 +102,21 @@ module.exports.getStudentsByCourse = function (course) {
     });
 };
 
+module.exports.addStudent = function (requestBody) {
+    return new Promise(function (resolve, reject) {
+        try {
+            requestBody.studentNum = dataCollection.students.length + 1;
+            if(requestBody.TA === undefined)
+                requestBody.TA = false;
+            else
+                requestBody.TA = true;
+                dataCollection.students.push(requestBody);
+            resolve("Student Added");
+        } catch (err) {
+            console.log(err)
+            reject(err);
+        }
+    });
+};
+
 
