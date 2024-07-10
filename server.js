@@ -107,5 +107,5 @@ collegeData.initialize()
 }).catch((err) => {
     console.log("Failed to fetch data from disk")
 })
-
+module.exports = collegeData.initialize;
 module.exports = app;
