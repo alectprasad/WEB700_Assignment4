@@ -40,6 +40,7 @@ app.post("/students/add", (req, res) => {
         res.redirect("/students");
     })
     .catch((error) => {
+        console.log(error.message)
         res.status(400).send(`<script>alert('Something Went Wrong'); window.location.href = '/addStudent';</script>`);
     })
 })
