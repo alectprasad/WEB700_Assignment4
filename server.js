@@ -77,6 +77,8 @@ app.get("/students/:num", (req, res) => {
 });
 
 app.get("/tas", (req, res) => {
+    collegeData.initialize()
+.then ((students) => {
     collegeData.getTAs()
     .then((tas) => {
         res.status(200).json(tas);
@@ -84,6 +86,9 @@ app.get("/tas", (req, res) => {
     .catch((err) => {
         res.status(200).json({message:"no results"});
     })
+}).catch((err) => {
+    console.log("Failed to fetch data from disk")
+})
 });
 
 app.get("/courses", (req, res) => {
@@ -107,5 +112,5 @@ collegeData.initialize()
 }).catch((err) => {
     console.log("Failed to fetch data from disk")
 })
-module.exports = collegeData.initialize;
+
 module.exports = app;
