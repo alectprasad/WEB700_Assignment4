@@ -1,5 +1,4 @@
 const fs = require("fs");
-const path = require('path');
 
 class Data{
     constructor(students, courses){
@@ -12,14 +11,14 @@ let dataCollection = null;
 
 module.exports.initialize = function () {
     return new Promise( (resolve, reject) => {
-        fs.readFile(path.join(__dirname, 'data', 'courses.json'),'utf8', (err, courseData) => {
+        fs.readFile('courses.json','utf8', (err, courseData) => {
             if (err) {
-                reject(err); return;
+                reject("unable to load courses"); return;
             }
 
-            fs.readFile(path.join(__dirname, 'data', 'students.json'),'utf8', (err, studentData) => {
+            fs.readFile('students.json','utf8', (err, studentData) => {
                 if (err) {
-                    reject(err); return;
+                    reject("unable to load students"); return;
                 }
 
                 dataCollection = new Data(JSON.parse(studentData), JSON.parse(courseData));
@@ -59,18 +58,11 @@ module.exports.getTAs = function () {
 
 module.exports.getCourses = function(){
    return new Promise((resolve,reject)=>{
-    this.initialize()
-    .then((data) => {
-        if (dataCollection.courses.length == 0) {
-            reject("query returned 0 results"); return;
-        }
-        resolve(dataCollection.courses);
-       });
-    })
-    .catch(err => {
-        console.log(err)
-    })
-    
+    if (dataCollection.courses.length == 0) {
+        reject("query returned 0 results"); return;
+    }
+    resolve(dataCollection.courses);
+   });
 };
 
 module.exports.getStudentByNum = function (num) {
