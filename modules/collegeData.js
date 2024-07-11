@@ -58,6 +58,7 @@ module.exports.getTAs = function () {
 
 module.exports.getCourses = function(){
    return new Promise((resolve,reject)=>{
+    console.log(dataCollection.courses);
     if (dataCollection.courses === undefined) {
         fs.readFile('courses.json','utf-8',(err, data) => {
             if (err) {
