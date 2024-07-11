@@ -13,12 +13,12 @@ module.exports.initialize = function () {
     return new Promise( (resolve, reject) => {
         fs.readFile(path.join(__dirname, 'data', 'courses.json'),'utf8', (err, courseData) => {
             if (err) {
-                reject("unable to load courses"); return;
+                reject(err); return;
             }
 
             fs.readFile(path.join(__dirname, 'data', 'students.json'),'utf8', (err, studentData) => {
                 if (err) {
-                    reject("unable to load students"); return;
+                    reject(err); return;
                 }
 
                 dataCollection = new Data(JSON.parse(studentData), JSON.parse(courseData));
