@@ -58,24 +58,18 @@ module.exports.getTAs = function () {
 
 module.exports.getCourses = function(){
    return new Promise((resolve,reject)=>{
-    console.log(dataCollection.courses);
-    if (dataCollection.courses === undefined) {
-        fs.readFile('courses.json','utf-8',(err, data) => {
-            if (err) {
-                reject("unable to load courses"); return;
-            }
-            const courses = JSON.parse(data);
-            if (dataCollection.courses.length == 0) {
-                reject("query returned 0 results"); return;
-            }
-            resolve(courses);
-        })
-    };
-    if (dataCollection.courses.length == 0) {
-        reject("query returned 0 results"); return;
-    }
-    resolve(dataCollection.courses);
-   });
+    this.initialize()
+    .then((data) => {
+        if (dataCollection.courses.length == 0) {
+            reject("query returned 0 results"); return;
+        }
+        resolve(dataCollection.courses);
+       });
+    })
+    .catch(err => {
+        console.log(err)
+    })
+    
 };
 
 module.exports.getStudentByNum = function (num) {
