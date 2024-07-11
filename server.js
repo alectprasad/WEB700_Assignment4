@@ -15,6 +15,7 @@ const collegeData = require('./modules/collegeData');
 const path = require('path');
 
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'data')));
 app.use(express.urlencoded({ extended: true }));
 
 // setup a 'route' to listen on the default url path
